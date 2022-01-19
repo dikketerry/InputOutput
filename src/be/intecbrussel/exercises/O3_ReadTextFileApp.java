@@ -21,18 +21,6 @@ public class O3_ReadTextFileApp {
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
             }
-//            bufferedReader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void readFile2(Path path) {
-        try (BufferedReader bufferedReader = Files.newBufferedReader(path)) {
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

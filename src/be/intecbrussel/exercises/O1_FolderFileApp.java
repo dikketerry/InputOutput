@@ -13,13 +13,11 @@ import static java.nio.file.StandardCopyOption.*;
 // UnsupportedOperationException
 public class O1_FolderFileApp {
     public static void main(String[] args) {
-//        Files.createDirectories(Paths.get("files/exercises/exercise1"));
-
         Path path = Paths.get("files/exercises/exercise1/exercise1.txt");
 
         createFile(path);
         writeDataToFile(path);
-//        readAttributesOfFile(path);
+//        readAttributesOfFile(path); // TODO
         readDataFromFile(path);
         printOwnerFile(path);
         renameFile(path);
@@ -50,7 +48,7 @@ public class O1_FolderFileApp {
         }
     }
 
-    // read attributes of file
+    // read attributes of file - TODO
     private static void readAttributesOfFile(Path path) {
         try {
             DosFileAttributes attrbs = Files.readAttributes(path,

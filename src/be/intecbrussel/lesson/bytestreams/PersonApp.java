@@ -6,11 +6,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class PersonApp {
-
-    // learning bytestreams. Bytestreams are indicated with ...OutPutStream
-    // or ...InputStream (Character streams are indicated with ...Writer or
-    // ...Reader
-
     public static void main(String[] args) {
 
         Path path = Paths.get("files/bytestreams/people.txt");
@@ -22,8 +17,8 @@ public class PersonApp {
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 
             oos.writeObject(person); // serialization means conversion to
-            // bytes - this needs to be arranged in the object class we're
-            // trying to place in our output stream
+            // bytes - this needs to be arranged in the object class subject
+            // to placing in output stream
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -37,8 +32,9 @@ public class PersonApp {
 
         } catch (IOException | ClassNotFoundException e) { //
             // ClassNotFoundException is another type of exception that needs
-            // to be caught here: the class, in this case Person, could not
-            // be available, therefore we need to catch this potential exception
+            // to be caught here: the class, in this case Person, could
+            // potentially not exist, and for this an exception needs
+            // to be caught
             e.printStackTrace();
         }
     }

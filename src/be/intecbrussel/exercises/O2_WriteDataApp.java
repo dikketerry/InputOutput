@@ -1,7 +1,6 @@
 package be.intecbrussel.exercises;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,11 +10,9 @@ import java.nio.file.Paths;
 public class O2_WriteDataApp {
     public static void main(String[] args) {
         Path path = Paths.get("files/exercises/exercise2/exercise.txt");
-        // note: starting with a '/', results in 2 exceptions... why?
-
         createFile(path);
         writeDataToFile(path);
-//        setFileReadOnly(path); // not working
+        setFileReadOnly(path);
     }
 
     // create directory and file
@@ -42,11 +39,7 @@ public class O2_WriteDataApp {
     }
 
     // set attribute setReadOnly to true
-//    private static void setFileReadOnly(Path path) {
-//        try {
-//            Files.setAttribute(path, "dos:isReadOnly", true);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    private static void setFileReadOnly(Path path) {
+        path.toFile().setReadOnly();
+    }
 }

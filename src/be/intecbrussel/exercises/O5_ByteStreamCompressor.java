@@ -1,6 +1,5 @@
 package be.intecbrussel.exercises;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -14,12 +13,9 @@ public class O5_ByteStreamCompressor {
 
         Path path = Paths.get("files/exercises/exercise5/textCompressed.txt");
 
-        String text = new String("text text text");
-
         createFile(path);
         writeAsCompressedDataToFile(path);
         readCompressedFile(path); // TODO
-//        System.out.println(text);
     }
 
     private static void createFile(Path path) {
@@ -45,6 +41,6 @@ public class O5_ByteStreamCompressor {
     }
 
     private static void readCompressedFile(Path path) {
-
+        // TODO
     }
 }

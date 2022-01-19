@@ -15,11 +15,9 @@ public class WriteReadObjectApp {
         // location
         Path path = Paths.get("files/bytestreams/textfile.ser");
 
-
         // methods
         writeObjects(path, text, date);
         readObjects(path);
-
     }
 
     // method to write objects to file located at path variable
@@ -55,8 +53,6 @@ public class WriteReadObjectApp {
         } catch (IOException | ClassNotFoundException e) {
             e.getMessage();
         }
-
     }
-
 
 }

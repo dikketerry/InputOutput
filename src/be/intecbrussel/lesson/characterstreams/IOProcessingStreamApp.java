@@ -19,8 +19,8 @@ public class IOProcessingStreamApp {
     private static void createFile(Path path) {
         try {
             Files.createDirectories(path.getParent());
-            if (Files.notExists(path)) { // really needed, see below comment
-                Files.createFile(path); // rights are needed to create files
+            if (Files.notExists(path)) {
+                Files.createFile(path);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();

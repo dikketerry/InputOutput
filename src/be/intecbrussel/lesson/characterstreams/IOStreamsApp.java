@@ -19,8 +19,8 @@ public class IOStreamsApp {
     private static void createFile(Path path) {
         try {
             Files.createDirectories(path.getParent());
-            if (Files.notExists(path)) { // really needed, see below comment
-                Files.createFile(path); // rights are needed to create files
+            if (Files.notExists(path)) { // check if file not already exists
+                Files.createFile(path);
             }
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -46,13 +46,13 @@ public class IOStreamsApp {
                 e.printStackTrace();
             }
         }
-    } // Ooooff, quite ugly code. Can we do this differently? See method2:
+    } // Ooooff, quite long code. Can this be done differently? See method2:
 
-    // in below, we use a try with resources - we create the resource by
-    // giving it as a parameter to the try block. The try with resources has
-    // an automatic closure block included, which ensures the FileWriter will
-    // be closed - no need to write it in code. This works only with classes
-    // which implement the AutoClosable interface.
+    // use try with resources - create the resource by prioviding it as a
+    // parameter to the try block. The try with resources has
+    // an automatic closure block included, which ensures FileWriter will
+    // be closed: no need to write the closure. This works only with classes
+    // that implement AutoClosable interface.
 
     private static void writeDataToFile2(Path path) {
         try (FileWriter fileWriter = new FileWriter(path.toFile()) ){
@@ -67,13 +67,10 @@ public class IOStreamsApp {
     private static void readDataFromFile(Path path) {
         try (FileReader fileReader = new FileReader(path.toFile()) ) {
             // FileReader is a IOStream
-            int character; // we assign our .read() to a variable
-            while((character = fileReader.read()) != -1) { // while(true) is
-                // handy to see
-                // what this
-                // method does
-                System.out.println((char) character); // as .read provides
-                // unicode (ints) we typecast our ints to chars
+            int character; // to assign result of .read() to a variable
+            while((character = fileReader.read()) != -1) {
+                System.out.println((char) character); // as .read() provides
+                // unicode (ints), typecast ints to chars
             }
         } catch (IOException e) {
             e.printStackTrace();

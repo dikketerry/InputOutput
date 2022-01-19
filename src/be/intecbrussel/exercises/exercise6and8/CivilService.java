@@ -7,7 +7,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 // not working! throws classNotFoundException... ):
-
 public class CivilService {
     public static void main(String[] args) throws IOException {
 //        try (FileInputStream file = new FileInputStream("files/exercises" +
@@ -20,7 +19,6 @@ public class CivilService {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-
 
         Path path = Paths.get("files/exercises/exercise6/AlisonApple.txt");
         readPersonFromFile(path);
